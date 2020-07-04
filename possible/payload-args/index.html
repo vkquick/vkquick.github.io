@@ -1,0 +1,708 @@
+
+
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Async python package for creating VK chat bots">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>Payload-типы - VK Quick</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CMonaco&display=fallback">
+        <style>body,input{font-family:"Ubuntu",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Monaco",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/termynal.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue-grey" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#payload-" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="VK Quick" class="md-header-nav__button md-logo" aria-label="VK Quick">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            VK Quick
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Payload-типы
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/Rhinik/vkquick/" title="Перейти к репозиторию" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    vkquick
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="VK Quick" class="md-nav__button md-logo" aria-label="VK Quick">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    VK Quick
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/Rhinik/vkquick/" title="Перейти к репозиторию" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    vkquick
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/" title="Установка" class="md-nav__link">
+      Установка
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../hello-world-bot/" title="hello world бот" class="md-nav__link">
+      hello world бот
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Всевозможные возможности
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Всевозможные возможности" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Всевозможные возможности
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Введение" class="md-nav__link">
+      Введение
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../project-struct/" title="Структура проекта" class="md-nav__link">
+      Структура проекта
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../command-struct/" title="Структура команды" class="md-nav__link">
+      Структура команды
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reaction/" title="Реакции" class="md-nav__link">
+      Реакции
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Payload-типы
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Payload-типы" class="md-nav__link md-nav__link--active">
+      Payload-типы
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#payload-" class="md-nav__link">
+    Payload-типы из коробки
+  </a>
+  
+    <nav class="md-nav" aria-label="Payload-типы из коробки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event" class="md-nav__link">
+    Event
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sender" class="md-nav__link">
+    Sender
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replieduser" class="md-nav__link">
+    RepliedUser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fwdusers" class="md-nav__link">
+    FwdUsers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clientinfo" class="md-nav__link">
+    ClientInfo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-bot" class="md-nav__link">
+    API и Bot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Кастомный тип
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../validators/" title="Валидаторы" class="md-nav__link">
+      Валидаторы
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../quick-answers/" title="Быстрые ответы" class="md-nav__link">
+      Быстрые ответы
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#payload-" class="md-nav__link">
+    Payload-типы из коробки
+  </a>
+  
+    <nav class="md-nav" aria-label="Payload-типы из коробки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event" class="md-nav__link">
+    Event
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sender" class="md-nav__link">
+    Sender
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replieduser" class="md-nav__link">
+    RepliedUser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fwdusers" class="md-nav__link">
+    FwdUsers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clientinfo" class="md-nav__link">
+    ClientInfo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-bot" class="md-nav__link">
+    API и Bot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Кастомный тип
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Rhinik/vkquick/edit/master/docs/possible/payload-args.md" title="Редактировать страницу" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                  <h1>Payload-типы</h1>
+                
+                <p>До этого момента функции-обработчики наших реакций не имели никаких аргументов, однако, они это могут. Но вот вопрос — как <code>Reaction</code> узнает, чем должны быть аргументы и что вообще они могут содержать, да и вообще, нужны ли они? Ответ <del>убил</del> прост — да, с помощью <a href="https://www.python.org/dev/peps/pep-3107/">аннотационных типов</a> можно, например, получить объект сообщения, пользователя, отправившего это сообщения, список с фотографиями из сообщения, API объект, позволяющий вызывать методы, да в прицнипе, что угодно. Штош, допустим, мы хотим узнать время отправки сообщения, как это сделать? перейдем к примеру</p>
+<p>Создадим команду <code>get_time</code> в боте, а в <code>src/get_time/main.py</code> вставим следующее</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
+
+
+<span class="nd">@vq</span><span class="o">.</span><span class="n">Reaction</span><span class="p">(</span><span class="s2">&quot;message_new&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_time</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">vq</span><span class="o">.</span><span class="n">Event</span><span class="p">()):</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span>
+        <span class="n">event</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">date</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Время отправки: </span><span class="si">{</span><span class="n">time</span><span class="si">:</span><span class="s2">%H:%M</span><span class="si">}</span><span class="s2">&quot;</span>
+</code></pre></div>
+
+<p>После чего запускаем бота через <code>$ bot run --debug</code>, переходим к нему в лс и пишем любое сообщение, на что бот нам пришлет его время отправки. Вуа-ля!</p>
+<p>Рассмотрим то, что мы написали в аргументах. Функция <code>get_time</code> принимает в свой единственный аргумент <code>event</code> объект <a href="https://vk.com/dev/groups_events">события нового сообщения</a> (<code>message_new</code>), где в <code>event.object.message</code> хранится информация <a href="https://vk.com/dev/objects/message">о самом сообщении</a>, одно из полей которого — <code>date</code>, содержащее время отправки сообщения в <a href="https://ru.wikipedia.org/wiki/Unix-время">timestamp</a>. После чего с помощью модуля <code>datetime</code> мы превращаем datetime в human-вид (оставляя часы и минуты) в процессе интерполяции в f-строку. Нам потребовалось реализовать в логике всего пару физических строк, остальное взял на себя <strong>vkquick</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Обратите внимание на скобки у <code>vq.Event</code>. Для каждого payload-типа они <strong>обязательны</strong>, кроме нескольких исключений: <code>vq.API</code>, <code>vq.Bot</code> и аллиасные типы для аргументов текстовой команды, о которых речь пойдет позже</p>
+</div>
+<h2 id="payload-">Payload-типы из коробки<a class="headerlink" href="#payload-" title="Permanent link">&para;</a></h2>
+<p>Каждый тип доступен из модуля через обращение по точке, т.е. <code>vq.Event</code>, <code>vq.Sender</code></p>
+<h3 id="event"><code>Event</code><a class="headerlink" href="#event" title="Permanent link">&para;</a></h3>
+<p>Возвращает объект пришедшего события. Само по себе событие JSON, но с помощью <a href="https://pypi.org/project/attrdict/1.2.0/"><code>attrdict</code></a> вы можете получать ключи через точку. О всех событиях и их структуре можно почитать <a href="(https://vk.com/dev/groups_events)">здесь</a>. Не принимает аргументов при вызове</p>
+<h3 id="sender"><code>Sender</code><a class="headerlink" href="#sender" title="Permanent link">&para;</a></h3>
+<p>Возвращает свой объект пользователя <code>vq.User</code>, отправившего сообщение, с <em>полями быстрого доступа</em> и собственным форматированием. Принимает список *аргсов для <code>fields</code> параметра в <a href="https://vk.com/dev/users.get"><code>users.get</code></a>, тобишь <code>vq.Sender("bdate")</code> вернет пользователя</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Если написать боту <code>myname</code>, то он вернет имя пользователя, отправившего сообщение
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
+
+
+<span class="nd">@vq</span><span class="o">.</span><span class="n">Cmd</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;myname&quot;</span><span class="p">])</span>
+<span class="nd">@vq</span><span class="o">.</span><span class="n">Reaction</span><span class="p">(</span><span class="s2">&quot;message_new&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="n">sender</span><span class="p">:</span> <span class="n">vq</span><span class="o">.</span><span class="n">Sender</span><span class="p">()):</span>
+    <span class="k">return</span> <span class="n">sender</span><span class="o">.</span><span class="n">fn</span> <span class="c1"># fn это first_name</span>
+</code></pre></div></p>
+</div>
+<div class="admonition todo">
+<p class="admonition-title">Todo</p>
+<p><a href="https://vk.com/dev/users.get"><code>users.get</code></a> содержит еще одно поле — <code>name_case</code>. Его значения пока что передать нельзя, но такая возможность добавится в v0.2. Это рапространяет на все payload-типы, который возвращают объект пользователя</p>
+</div>
+<h3 id="replieduser"><code>RepliedUser</code><a class="headerlink" href="#replieduser" title="Permanent link">&para;</a></h3>
+<p>Возвращает пользователя <code>vq.User</code> из пересланного сообщения, если таковой имеется, иначе <code>None</code>. принимает аналогичные для <code>Sender</code> поля</p>
+<h3 id="fwdusers"><code>FwdUsers</code><a class="headerlink" href="#fwdusers" title="Permanent link">&para;</a></h3>
+<p>Возвращает <strong>список</strong> из пользователей <code>vq.User</code>, попавших в пересланные сообщения (на самом верхнем уровне глубины). Переданные поля для <code>fields</code> добудуться для каждого из пользователей</p>
+<h3 id="clientinfo"><code>ClientInfo</code><a class="headerlink" href="#clientinfo" title="Permanent link">&para;</a></h3>
+<p>Возвращает информацию о клиенте по доступным возможностям (может ли он работать с клаиватурой, с каруселями, какие кнопки поддерживает и прочее). Просто быстрый доступ к <code>event.object.client_info</code></p>
+<h3 id="api-bot"><code>API</code> и <code>Bot</code><a class="headerlink" href="#api-bot" title="Permanent link">&para;</a></h3>
+<p>Сессионные <strong>объекты</strong>, поэтому для того, чтобы получить их в аннотациях, скобки ставить не нужно. Их описание находится на отдельной странице</p>
+<h2 id="_1">Кастомный тип<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Для того, чтобы создать свой аннотационный тип, унаследуйтесь от базового класса для всех аннотаций <code>vq.Annotype</code>. После чего нужно будет переопределить абстрактный async/sync метод <code>prepare</code>. Именно он вызывается у аннотационного для определня значения аргумента. Метод принимает в себя следующие параметры</p>
+<table>
+<thead>
+<tr>
+<th align="left">Имя</th>
+<th align="left">Тип</th>
+<th align="left">Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>argname</code></td>
+<td align="left">str</td>
+<td align="left">Имя аргумента, на которое будет передано значение</td>
+</tr>
+<tr>
+<td align="left"><code>event</code></td>
+<td align="left">vq.Event (почти тот же самый attrdict.AttrMap)</td>
+<td align="left">Объект события LongPoll</td>
+</tr>
+<tr>
+<td align="left"><code>func</code></td>
+<td align="left">function/coroutine function</td>
+<td align="left">Функция-обработчик</td>
+</tr>
+<tr>
+<td align="left"><code>bin_stack</code></td>
+<td align="left">type</td>
+<td align="left">Пустышка. Создается для каждого отдельного вызова какой-либо команды и живет пока происходит валидация, подготовка аннотипов и вызов обработчика. Используйте для своих каких-то дополнительных параметров, чтобы избежать гонку данных</td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../reaction/" title="Реакции" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Назад
+                </span>
+                Реакции
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../validators/" title="Валидаторы" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Вперед
+                </span>
+                Валидаторы
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e # \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../js/termynal.js"></script>
+      
+        <script src="../../js/custom.js"></script>
+      
+    
+  </body>
+</html>

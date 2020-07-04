@@ -1,0 +1,813 @@
+
+
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Async python package for creating VK chat bots">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>Index old - VK Quick</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CMonaco&display=fallback">
+        <style>body,input{font-family:"Ubuntu",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Monaco",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../css/termynal.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue-grey" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="VK Quick" class="md-header-nav__button md-logo" aria-label="VK Quick">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            VK Quick
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Index old
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/Rhinik/vkquick/" title="Перейти к репозиторию" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    vkquick
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="VK Quick" class="md-nav__button md-logo" aria-label="VK Quick">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    VK Quick
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/Rhinik/vkquick/" title="Перейти к репозиторию" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    vkquick
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../installation/" title="Установка" class="md-nav__link">
+      Установка
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../hello-world-bot/" title="hello world бот" class="md-nav__link">
+      hello world бот
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Всевозможные возможности
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Всевозможные возможности" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Всевозможные возможности
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../possible/" title="Введение" class="md-nav__link">
+      Введение
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../possible/project-struct/" title="Структура проекта" class="md-nav__link">
+      Структура проекта
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../possible/command-struct/" title="Структура команды" class="md-nav__link">
+      Структура команды
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../possible/reaction/" title="Реакции" class="md-nav__link">
+      Реакции
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../possible/payload-args/" title="Payload-типы" class="md-nav__link">
+      Payload-типы
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../possible/validators/" title="Валидаторы" class="md-nav__link">
+      Валидаторы
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../possible/quick-answers/" title="Быстрые ответы" class="md-nav__link">
+      Быстрые ответы
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Использование
+  </a>
+  
+    <nav class="md-nav" aria-label="Использование">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hello-world" class="md-nav__link">
+    hello world бот
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Структура проекта
+  </a>
+  
+    <nav class="md-nav" aria-label="Структура проекта">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    LICENSE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readmemd" class="md-nav__link">
+    README.md
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configtoml" class="md-nav__link">
+    config.toml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src" class="md-nav__link">
+    src/
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reactions" class="md-nav__link">
+    Команды (Reactions)
+  </a>
+  
+    <nav class="md-nav" aria-label="Команды (Reactions)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mainpy" class="md-nav__link">
+    main.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configpy" class="md-nav__link">
+    config.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    О возможностях реакций
+  </a>
+  
+    <nav class="md-nav" aria-label="О возможностях реакций">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Аргументы
+  </a>
+  
+    <nav class="md-nav" aria-label="Аргументы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    О скобках в аннотипах
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Быстрые ответы
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Rhinik/vkquick/edit/master/docs/index_old.md" title="Редактировать страницу" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                  <h1>Index old</h1>
+                
+                <p><strong>vkquivk</strong> -- Это асинхронный фреймворк
+для написания <em>легкоподдерживаемых</em> чат ботов ВКонтакте. Давайте сами в этом убедимся, создав <em>hello world</em> бота</p>
+<h2 id="_1">Использование<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="hello-world">hello world бот<a class="headerlink" href="#hello-world" title="Permanent link">&para;</a></h3>
+<p>Помимо прочего, <strong>vkquick</strong> из коробки имеет
+терминальный инструмент <strong>bot</strong>,
+который представляет из себя некого <em>менеджера</em> Ваших проектов.
+Именно через него мы будем создавать бота и
+добавлять в него команды</p>
+<p>Выберите в директорию, где будет
+располагаться проект с ботом,
+перейдите в нее, и создайте бота следующей командой:
+<div class="highlight"><pre><span></span><code>$ bot new hello_world
+</code></pre></div>
+В ответ Вы получите такое сообщение:</p>
+<div class="highlight"><pre><span></span><code>Created hello_world bot. Don&#39;t forget &#39;cd&#39; to bot&#39;s directory
+
+Please, add following parameters to hello_world/config.toml under [api] section
+    -- token
+    -- group_id
+</code></pre></div>
+
+<p>Для начала, перейдем в только что созданную папку <code>hello_world</code>:
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> hello_world
+</code></pre></div>
+Теперь нам требуется указать токен бота и ID группы в файле <code>config.toml</code> (о TOML можно почитать <a href="https://github.com/toml-lang/toml">здесь</a>). Под заголовком <code>[api]</code> вы увидите две переменные: <code>token</code> и <code>group_id</code>. В них нужно вставить соответствующие значения.</p>
+<p>Конфиг должен выглядеть примерно так:
+<div class="highlight"><pre><span></span><code><span class="k">[api]</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s">&quot;ab34b87e9d87a987dab34b87e9d87a987d&quot;</span>
+<span class="n">group_id</span> <span class="o">=</span> <span class="mi">234223543</span>
+<span class="n">owner</span> <span class="o">=</span> <span class="s">&quot;group&quot;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="mf">5.124</span>
+
+
+<span class="k">[longpoll]</span>
+<span class="n">wait</span> <span class="o">=</span> <span class="mi">25</span>
+</code></pre></div></p>
+<p>Теперь нужно добавить команду боту. Например, <code>hello</code>
+<div class="highlight"><pre><span></span><code>$ bot com hello
+</code></pre></div>
+Собственно, это все! Давайте запустим его и посмотрим, что он может
+<div class="highlight"><pre><span></span><code>$ bot run --reload --debug
+</code></pre></div>
+Переходим в лс боту и пишем <code>hello</code>. Вуа-ля! Вы все еще не написали ни одной строчки на Python, а уже сделали бота на нем. Круто, не правда ли?</p>
+<p>Но не обходиться же нам одним hello world'ом? Я предлагаю ознокмиться с тем, что сейчас находится внутри нашей папки
+<div class="highlight"><pre><span></span><code>├── LICENSE
+├── README.md
+├── config.toml
+└── src
+    ├── __init__.py
+    └── hello
+        ├── __init__.py
+        ├── config.py
+        └── main.py
+</code></pre></div>
+И так, по порядку</p>
+<h2 id="_2">Структура проекта<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="license"><code>LICENSE</code><a class="headerlink" href="#license" title="Permanent link">&para;</a></h3>
+<p>Обычный файл с <a href="https://ru.wikipedia.org/wiki/Лицензия_MIT">MIT лицензией</a>. Вы можете вписать туда провообладателя (то есть себя)</p>
+<h3 id="readmemd"><code>README.md</code><a class="headerlink" href="#readmemd" title="Permanent link">&para;</a></h3>
+<p>Классика любого проекта. Добавляйте сюда информацию о своем боте, причем как по использованию, так и для разработки</p>
+<h3 id="configtoml"><code>config.toml</code><a class="headerlink" href="#configtoml" title="Permanent link">&para;</a></h3>
+<p>В нем располагаются абсолютно все настройки вашего бота, начиная токеном, заканчивая фильтром дебага. О возможных паратреах этого конфига можно узнать в <code>config_toml</code></p>
+<h3 id="src"><code>src/</code><a class="headerlink" href="#src" title="Permanent link">&para;</a></h3>
+<p>Здесь содержатся все команды, валидаторы, аннотационнные типы, хендлеры сигналов, да и вообще весь код</p>
+<h2 id="reactions">Команды (Reactions)<a class="headerlink" href="#reactions" title="Permanent link">&para;</a></h2>
+<p>Каждая команда создается таким образом:
+<div class="highlight"><pre><span></span><code>$ bot com &lt;name&gt;
+</code></pre></div>
+И по умолчанию состоит из двух основных файлов:</p>
+<h3 id="mainpy"><code>main.py</code><a class="headerlink" href="#mainpy" title="Permanent link">&para;</a></h3>
+<p>Здесь находится сам код команды, выраженный функцией. Предлагаю разобрать по порядку, из чего она состоит</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="kn">as</span> <span class="nn">vq</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">config</span>
+
+
+<span class="nd">@vq.Cmd</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">NAMES</span><span class="p">)</span>
+<span class="nd">@vq.Reaction</span><span class="p">(</span><span class="s2">&quot;message_new&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Handler to command &quot;hello&quot;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">config</span><span class="o">.</span><span class="n">ANSWER</span>
+</code></pre></div>
+
+
+<p>Думаю, с импортами все понятно (о <code>config.py</code> будет чуть ниже)</p>
+<ul>
+<li>
+<p><code>@vq.Cmd(names=config.NAMES)</code></p>
+<p><em>Валидатор</em> <code>vkquick.validators.cmd.Cmd</code> -- обработчик текстовой команды. Именно в нем вы указываете, какие есть имена у команды, какие префиксы, должна ли быть команда быть чувствитель к регистру символов
+(по умолчанию -- нет) и прочее. В данном случае мы обозначае что у команды есть одно имя --<code>hello</code> (содержимое находит в <code>config.py</code>)</p>
+</li>
+<li>
+<p><code>@vq.Reaction("message_new")</code></p>
+<p>Этот декоратор указывает на то,
+что мы создаем <em>реакцию</em> на LongPoll событие <code>message_new</code></p>
+</li>
+<li>
+<p><code>def hello():</code></p>
+<p>Сама реакция. Async/sync. Про аргументы речь пойдет чуть ниже</p>
+</li>
+<li>
+<p><code>return config.ANSWER</code></p>
+<p>Возвращает ответ туда, откуда пришло сообщение</p>
+</li>
+</ul>
+<h3 id="configpy"><code>config.py</code><a class="headerlink" href="#configpy" title="Permanent link">&para;</a></h3>
+<p>Настройки вашей команды. Выносите сюда имена команды, префиксы и прочее. Однако, вы можете обойтись и без этого файла, но мы рекомендуем вам стараться выносить все данные о конфигурации команды именно сюда. Заметьте, что здесь лучше располагать настройки только для 1 команды, тобишь для той, которой была выделена директория. Если вы хотите задать какой-то параметр, который легко будет доступен среди всех ваших команд (например, все ваши команды начинаются с одного и того же префикса), используйте <code>config.toml</code>. Достать данные из него можно с помощью атрибута <code>config</code> у инстанса <code>bot.Bot</code>. Сам инстанс можно получить через <code>vq.current.bot</code>, либо просто назначив аргумент функции с аннотацией, например:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># config.toml</span>
+
+<span class="p">...</span> <span class="c1"># [api], [lp]</span>
+<span class="k">[mysettings]</span>
+<span class="n">prefix</span> <span class="o">=</span> <span class="k">[&quot;/&quot;, &quot;!&quot;]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># src/foo/main.py</span>
+<span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
+
+
+<span class="nd">@vq</span><span class="o">.</span><span class="n">Cmd</span><span class="p">(</span>
+    <span class="n">names</span><span class="o">=</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span>
+    <span class="n">prefs</span><span class="o">=</span><span class="n">vq</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">bot</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">mysettings</span><span class="o">.</span><span class="n">prefix</span>
+<span class="p">)</span>
+<span class="nd">@vq</span><span class="o">.</span><span class="n">Reaction</span><span class="p">(</span><span class="s2">&quot;message_new&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">bot</span><span class="p">:</span> <span class="n">vq</span><span class="o">.</span><span class="n">Bot</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;My prefixes: </span><span class="si">{</span><span class="n">bot</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">mysettings</span><span class="o">.</span><span class="n">prefix</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="c1"># My prefixes: [&#39;/&#39;, &#39;!&#39;]</span>
+</code></pre></div>
+
+<h3 id="_3">О возможностях реакций<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>Сами функции могут быть как <a href="https://docs.python.org/3/library/asyncio-task.html">корутинами</a>, так и синхронными функциями, но все они поддерживают ряд <em>дополнительных</em> возможностей</p>
+<h4 id="_4">Аргументы<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>Вы можете назначать аргументы в функцию, для того, чтобы использовать дополнительные значения (для получения события, объекта пользователя, отправившего сообщение, API возможностей...), при этом указывая значение аргумента в <a href="https://www.python.org/dev/peps/pep-3107/">аннтоциях</a>. Каждая аннотация должна быть унаследована от <code>vkquick.annotypes.base.Annotype</code>. Все возможные <em>аннтотипы</em> есть в <code>vkquick.annotypes</code> (+ <code>vkquick.bot.Bot</code> и <code>vkquick.api.API</code>).</p>
+<p>Например, вот так можно получить возможность использовать VK API метод:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
+
+
+<span class="nd">@vq</span><span class="o">.</span><span class="n">Reaction</span><span class="p">(</span><span class="s2">&quot;message_new&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">api</span><span class="p">:</span> <span class="n">vq</span><span class="o">.</span><span class="n">API</span><span class="p">):</span>
+    <span class="n">users</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">user_ids</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="o">...</span>
+</code></pre></div>
+
+<p>Вы также видели пример использования аннотипа <code>vkquick.bot.Bot</code> чуть выше, в описании <code>config.py</code></p>
+<p>Другой пример -- команда, выводящая имя и фамилию пользователя, отправившего сообщение на команду <code>/myname</code></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
+
+
+<span class="nd">@vq</span><span class="o">.</span><span class="n">Cmd</span><span class="p">(</span><span class="n">prefs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;/&quot;</span><span class="p">],</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;myname&quot;</span><span class="p">])</span>
+<span class="nd">@vq</span><span class="o">.</span><span class="n">Reaction</span><span class="p">(</span><span class="s2">&quot;message_new&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">myname</span><span class="p">(</span><span class="n">sender</span><span class="p">:</span> <span class="n">vq</span><span class="o">.</span><span class="n">Sender</span><span class="p">(),</span> <span class="n">api</span><span class="p">:</span> <span class="n">vq</span><span class="o">.</span><span class="n">API</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Your name: </span><span class="si">{</span><span class="n">sender</span><span class="si">:</span><span class="s2">&lt;fn&gt; &lt;ln&gt;</span><span class="si">}</span><span class="s2">&quot;</span>
+</code></pre></div>
+
+<p><code>sender</code> предластавляет из себя объект пользователя <code>vkquick.tools.user.User</code> с <em>полями быстрого доступа</em> и определнным __format__. Советуем ознакомиться с возможностями этого объекта, потому что он возвращается как в <code>vkquick.annotypes.sender.Sender</code>, так и в <code>vkquick.annotypes.replied_user.RepliedUser</code> (пользователь из переслнного сообщения), так и во многих других</p>
+<p>Но помимо "payload" типов (т.е. облегчающих работу с чем-либо), вы также можете указать <strong>аргументы из текстовой команды</strong> (полный список в <code>vkquick.annotypes.command_types</code>), например</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
+
+
+<span class="nd">@vq</span><span class="o">.</span><span class="n">Cmd</span><span class="p">(</span><span class="n">prefs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;/&quot;</span><span class="p">],</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;set age&quot;</span><span class="p">])</span>
+<span class="nd">@vq</span><span class="o">.</span><span class="n">Reaction</span><span class="p">(</span><span class="s2">&quot;message_new&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">age</span><span class="p">(</span><span class="n">age</span><span class="p">:</span> <span class="n">vq</span><span class="o">.</span><span class="n">Integer</span><span class="p">()):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">age</span><span class="si">=}</span><span class="s2">&quot;</span>
+</code></pre></div>
+
+<p>Можно вызвать вот так</p>
+<table>
+<thead>
+<tr>
+<th align="left">Текст команды</th>
+<th align="left">Ответ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>/set name 456</code></td>
+<td align="left">-&gt; <code>age=456</code></td>
+</tr>
+<tr>
+<td align="left"><code>/set name 678546456456</code></td>
+<td align="left">-&gt; <code>age=678546456456</code></td>
+</tr>
+</tbody>
+</table>
+<p>Вы также можете выстраивать "цепочку" аргументов, использовать <em>списки</em> типов, и одновременно с этим назначать payload типы. vkquick сам определит, что к чему относится</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
+
+
+<span class="nd">@vq</span><span class="o">.</span><span class="n">Cmd</span><span class="p">(</span><span class="n">prefs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;/&quot;</span><span class="p">],</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;profile&quot;</span><span class="p">])</span>
+<span class="nd">@vq</span><span class="o">.</span><span class="n">Reaction</span><span class="p">(</span><span class="s2">&quot;message_new&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">profile</span><span class="p">(</span>
+    <span class="n">page</span><span class="p">:</span> <span class="n">vq</span><span class="o">.</span><span class="n">UserMention</span><span class="p">(),</span>
+    <span class="n">age</span><span class="p">:</span> <span class="n">vq</span><span class="o">.</span><span class="n">Integer</span><span class="p">(),</span>
+    <span class="n">hobbies</span><span class="p">:</span> <span class="p">[</span><span class="n">vq</span><span class="o">.</span><span class="n">Word</span><span class="p">()]</span>
+<span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">page</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">age</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">hobbies</span><span class="si">=}</span><span class="s2">&quot;</span>
+</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th align="left">Текст команды</th>
+<th align="left">Ответ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>/profile @durov 24 music, guitar prog</code></td>
+<td align="left">-&gt; <code>page=&lt;vq.User id=1 name="Павел Дуров"&gt; age=24 hobbies=['music', 'guitar', 'prog']</code></td>
+</tr>
+<tr>
+<td align="left"><code>/profile @deknowny 15 some, foo egg , fizz</code></td>
+<td align="left">-&gt; <code>page=&lt;vq.User id=447532348 name="Ян Курбатов"&gt; age=15 hobbies=['some', 'foo', 'egg', 'fizz']</code></td>
+</tr>
+<tr>
+<td align="left"><br></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>.. tip::
+    Разделитель у списка это <code>r"(?:\s*,\s*|\s+)"</code>, то есть либо запятая, либо пробел(ы)</p>
+<p>В замен некоторых типов, можно использовать сокращения. Вместо <code>vkquick.annotypes.command_types.Integer</code> вы можете использовать <code>int</code>, вместо <code>vkquick.annotypes.command_types.String</code> -- <code>str</code>, а вместо <code>vkquick.annotypes.command_types.List</code> -- просто поместить тип в квадратные скобки, например, вместо такого варианта</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span>
+    <span class="n">num</span><span class="p">:</span> <span class="n">vq</span><span class="o">.</span><span class="n">Integer</span><span class="p">(),</span>
+    <span class="n">some</span><span class="p">:</span> <span class="n">vq</span><span class="o">.</span><span class="n">String</span><span class="p">(),</span>
+    <span class="n">fizz</span><span class="p">:</span> <span class="n">vq</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">vq</span><span class="o">.</span><span class="n">UserMention</span><span class="p">())</span>
+<span class="p">):</span> <span class="o">...</span>
+</code></pre></div>
+
+<p>Можно так:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span>
+    <span class="n">num</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">some</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">fizz</span><span class="p">:</span> <span class="p">[</span><span class="n">vq</span><span class="o">.</span><span class="n">UserMention</span><span class="p">()]</span>
+<span class="p">):</span> <span class="o">...</span>
+</code></pre></div>
+
+<h5 id="_5">О скобках в аннотипах<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h5>
+<p>Каждый аннотип должен быть инстансом, то есть</p>
+<p>Верно
+<div class="highlight"><pre><span></span><code><span class="n">some</span><span class="p">:</span> <span class="n">vq</span><span class="o">.</span><span class="n">Word</span><span class="p">()</span>
+</code></pre></div></p>
+<p>Не верно
+<div class="highlight"><pre><span></span><code><span class="n">some</span><span class="p">:</span> <span class="n">vq</span><span class="o">.</span><span class="n">Word</span>
+</code></pre></div></p>
+<p>Исключение составляют <code>vkquick.bot.Bot</code> и <code>vkquick.api.API</code>. Тут <strong>не</strong> нужно ставить скобки</p>
+<h4 id="_6">Быстрые ответы<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>Вместо того, чтобы ответить сообщением туда, откуда пришла команда, вместо
+<div class="highlight"><pre><span></span><code><span class="k">await</span> <span class="n">vq</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">api</span>
+</code></pre></div></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e # \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../js/termynal.js"></script>
+      
+        <script src="../js/custom.js"></script>
+      
+    
+  </body>
+</html>
