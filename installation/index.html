@@ -381,6 +381,120 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8">
+    
+    <label class="md-nav__link" for="nav-4-8">
+      Инструменты
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Инструменты" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Инструменты
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../possible/tools/" title="Что это" class="md-nav__link">
+      Что это
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../possible/tools/keyboards/" title="Клавиатуры" class="md-nav__link">
+      Клавиатуры
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../possible/tools/buttons/" title="Кнопки" class="md-nav__link">
+      Кнопки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../possible/tools/templates/" title="Карусели" class="md-nav__link">
+      Карусели
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../possible/tools/elements/" title="Элементы" class="md-nav__link">
+      Элементы
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../possible/tools/photos/" title="Загрузка фотографий" class="md-nav__link">
+      Загрузка фотографий
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../possible/tools/docs-vm-graffiti/" title="Загрузка документов, гс, граффити" class="md-nav__link">
+      Загрузка документов, гс, граффити
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -461,7 +575,8 @@
 </div></p>
 <h2 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">&para;</a></h2>
 <p>Либо же произвести установку через исходники на <a href="https://github.com/Rhinik/vkquick">GitHub</a></p>
-<div class="termy">
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Linux, MacOS</label><div class="tabbed-content">
+<p><div class="termy">
 <div class="highlight"><pre><span></span><code><span class="gp">$</span> git clone https://github.com/Rhinik/vkquick
 <span class="gp">$</span> <span class="nb">cd</span> vkquick
 <span class="gp">$</span> python -m venv env
@@ -469,28 +584,30 @@
 <span class="gp">$</span> pip install poetry
 <span class="gp">$</span> poetry install
 </code></pre></div>
+</div></p>
 </div>
-
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Для пользователей Windows активация виртуального окружения вместо <code>source env/bin/activate</code> происходит запуском <code>env\Scripts\activate.bat</code></p>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Windows (cmd)</label><div class="tabbed-content">
+<p><div class="termy">
+<div class="highlight"><pre><span></span><code><span class="gp">$</span> git clone https://github.com/Rhinik/vkquick
+<span class="gp">$</span> <span class="nb">cd</span> vkquick
+<span class="gp">$</span> python -m venv env
+<span class="gp">$</span> env<span class="se">\S</span>cripts<span class="se">\a</span>ctivate.bat
+<span class="gp">$</span> pip install poetry
+<span class="gp">$</span> poetry install
+</code></pre></div>
+</div></p>
+</div>
 </div>
 <h2 id="check-it">Check it<a class="headerlink" href="#check-it" title="Permanent link">&para;</a></h2>
-<p>После установки вам будет доступен как сам фреймворк, так и терминальный инструмент <strong>bot</strong>. Проверьте корректность установки</p>
+<p>После установки будет доступен как сам фреймворк, так и терминальный инструмент <strong>bot</strong>. Проверьте корректность установки</p>
 <div class="termy">
 <div class="highlight"><pre><span></span><code><span class="gp">$</span> bot --help
 <span class="go">Usage: bot [OPTIONS] COMMAND [ARGS]...</span>
 
 <span class="go">  Менеджер Ваших ботов</span>
-
-<span class="go">Options:</span>
-<span class="go">  --help  Show this message and exit.</span>
-
-<span class="go">Commands:</span>
-<span class="go">  com     Создает команду в боте.</span>
-<span class="go">  new     Создает нового бота</span>
-<span class="go">  run     Запускает бота</span>
-<span class="go">  signal  Добавляет обработчки сигнала в бота</span>
+<span class="go">...</span>
+<span class="go">...</span>
+<span class="go">...</span>
 
 <span class="gp">$</span> python
 <span class="gp">&gt;</span>&gt;&gt; import vkquick

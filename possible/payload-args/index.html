@@ -424,6 +424,120 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8">
+    
+    <label class="md-nav__link" for="nav-4-8">
+      Инструменты
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Инструменты" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Инструменты
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/" title="Что это" class="md-nav__link">
+      Что это
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/keyboards/" title="Клавиатуры" class="md-nav__link">
+      Клавиатуры
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/buttons/" title="Кнопки" class="md-nav__link">
+      Кнопки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/templates/" title="Карусели" class="md-nav__link">
+      Карусели
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/elements/" title="Элементы" class="md-nav__link">
+      Элементы
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/photos/" title="Загрузка фотографий" class="md-nav__link">
+      Загрузка фотографий
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/docs-vm-graffiti/" title="Загрузка документов, гс, граффити" class="md-nav__link">
+      Загрузка документов, гс, граффити
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -536,7 +650,7 @@
                 
                   <h1>Payload-типы</h1>
                 
-                <p>До этого момента функции-обработчики наших реакций не имели никаких аргументов, однако, они это могут. Но вот вопрос — как <code>Reaction</code> узнает, чем должны быть аргументы и что вообще они могут содержать, да и вообще, нужны ли они? Ответ <del>убил</del> прост — да, с помощью <a href="https://www.python.org/dev/peps/pep-3107/">аннотационных типов</a> можно, например, получить объект сообщения, пользователя, отправившего это сообщения, список с фотографиями из сообщения, API объект, позволяющий вызывать методы, да в прицнипе, что угодно. Штош, допустим, мы хотим узнать время отправки сообщения, как это сделать? перейдем к примеру</p>
+                <p>До этого момента функции-обработчики наших реакций не имели никаких аргументов, однако, они это могут. Но вот вопрос — как <code>Reaction</code> узнает, чем должны быть аргументы и что вообще они могут содержать, да и вообще, нужны ли они? Ответ <del>убил</del> прост — да, с помощью <a href="https://www.python.org/dev/peps/pep-3107/">аннотационных типов</a> можно, например, получить объект сообщения, пользователя, отправившего это сообщения, список с фотографиями из сообщения, объект, позволяющий вызывать методы вк, да в прицнипе, что угодно, не проводя лишнюю возню с API. Штош, допустим, мы хотим узнать время отправки сообщения, как это сделать? перейдем к примеру</p>
 <p>Создадим команду <code>get_time</code> в боте, а в <code>src/get_time/main.py</code> вставим следующее</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 

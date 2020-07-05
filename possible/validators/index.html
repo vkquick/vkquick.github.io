@@ -416,6 +416,120 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8">
+    
+    <label class="md-nav__link" for="nav-4-8">
+      Инструменты
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Инструменты" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Инструменты
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/" title="Что это" class="md-nav__link">
+      Что это
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/keyboards/" title="Клавиатуры" class="md-nav__link">
+      Клавиатуры
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/buttons/" title="Кнопки" class="md-nav__link">
+      Кнопки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/templates/" title="Карусели" class="md-nav__link">
+      Карусели
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/elements/" title="Элементы" class="md-nav__link">
+      Элементы
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/photos/" title="Загрузка фотографий" class="md-nav__link">
+      Загрузка фотографий
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/docs-vm-graffiti/" title="Загрузка документов, гс, граффити" class="md-nav__link">
+      Загрузка документов, гс, граффити
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -520,7 +634,7 @@
                 
                   <h1>Валидаторы</h1>
                 
-                <p>Валидаторы в использовании представляют собой просто висящие декораторы над реакциями (Важно: они должны быть выше декоратора <code>Reaction</code>) и на каждое подходящее событие проверяют, подходит ли команда по более конкретным условиям, проверяют, попадает ли текстовая команда пользователя под шаблон заданной, зашел ли пользователь в беседу, или же вышел, имеет ли пользователь права на эту команду. И вместо того, чтобы городить кучу if'ов, достаточно просто повесить декоратор с нужными настройками. Помимо прочего, валидаторы могут быть вызваны в async, и они всегда имеют одинаковый набор <em>необходимых</em> аргументов, что делает их совместимой с <strong>любой</strong> реакцией</p>
+                <p>Валидаторы в использовании представляют собой просто висящие декораторы над реакциями (Важно: они должны быть выше декоратора <code>Reaction</code>) и на каждое подходящее событие проверяют, подходит ли команда по более конкретным условиям, например, попадает ли текстовая команда пользователя под шаблон заданной, зашел ли пользователь в беседу, или же вышел, имеет ли пользователь права на эту команду и прочее. Вместо того, чтобы городить кучу if'ов, достаточно просто повесить декоратор с нужными настройками. Помимо всего остального, валидаторы могут быть вызваны в async, и они всегда имеют одинаковый набор <em>необходимых</em> аргументов, что делает их совместимой с <strong>любой</strong> реакцией</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>Команда сработает, если ее имя одно из <code>names</code> и префикс один из <code>prefs</code>, т.е. это <strong>валидные</strong> вызовы команды:</p>
@@ -571,13 +685,13 @@
 <tbody>
 <tr>
 <td><code>prefs</code></td>
-<td>Optional[List[str]]</td>
+<td>List[str]</td>
 <td>Нет префиксов</td>
 <td>Возможные префиксы команды. Стоят в самом ее начале</td>
 </tr>
 <tr>
 <td><code>names</code></td>
-<td>List[str]</td>
+<td>str</td>
 <td>Нет имен. Да, в совокупности с пустым префиксом и отсутствием аргументов это бесполезный валидатор. Можете смело убирать его в таком кейсе</td>
 <td>Возможные имена команды. Идут <strong>вплотную</strong> к префиксу</td>
 </tr>
@@ -589,7 +703,7 @@
 </tr>
 <tr>
 <td><code>argline</code></td>
-<td>Optional[str]</td>
+<td>str</td>
 <td>По умолчанию не используется</td>
 <td>Изначально все <strong>аргументы</strong> команды разделяются <code>r"\s+"</code>, но вы можете в корне поменять схему линии аргументов, используя <em>ленивую</em> интерполяцию. Например, пользователь должен ввести имя какого-то человека и через двоеточие число (<code>/com Bob:56</code>). Реакция будет выглядеть как на примере ниже</td>
 </tr>
@@ -734,7 +848,7 @@
 </ul>
 <p>Примеры типов можно найти <a href="https://github.com/Rhinik/vkquick/blob/master/vkquick/annotypes/command_types.py">тут</a></p>
 <h3 id="action">Action<a class="headerlink" href="#action" title="Permanent link">&para;</a></h3>
-<p>Принимает в себя список обрабатываемых <code>event.object.message.action.type</code> (Приглашение в беседу, выход, закрепление сообщения и прочее)</p>
+<p>Принимает в себя *список обрабатываемых <code>event.object.message.action.type</code> (Приглашение в беседу, выход, закрепление сообщения и прочее)</p>
 <div class="admonition todo">
 <p class="admonition-title">Todo</p>
 <p>Планируюется добавить быстрое получение пользователя из <code>member_id</code></p>

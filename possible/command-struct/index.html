@@ -383,6 +383,120 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8">
+    
+    <label class="md-nav__link" for="nav-4-8">
+      Инструменты
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Инструменты" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Инструменты
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/" title="Что это" class="md-nav__link">
+      Что это
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/keyboards/" title="Клавиатуры" class="md-nav__link">
+      Клавиатуры
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/buttons/" title="Кнопки" class="md-nav__link">
+      Кнопки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/templates/" title="Карусели" class="md-nav__link">
+      Карусели
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/elements/" title="Элементы" class="md-nav__link">
+      Элементы
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/photos/" title="Загрузка фотографий" class="md-nav__link">
+      Загрузка фотографий
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/docs-vm-graffiti/" title="Загрузка документов, гс, граффити" class="md-nav__link">
+      Загрузка документов, гс, граффити
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -456,7 +570,7 @@
                 
                 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Команда в <strong>vkquick</strong> — вещь очень неоднозначная. Это хендлер реакций, целый набор <em>валидаторов</em>, <em>payload-аргументы</em> и прочее. Здесь мы разберем файловую структуру и немного затронем код, чтобы немного понимать, что вообще из себя представляет команда, а дальше уже копнем более конкретно</p>
+<p>Команда в <strong>vkquick</strong> — вещь очень неоднозначная. Это хендлер реакций, целый набор <em>валидаторов</em>, <em>payload-аргументы</em> и много мелких деталей. Здесь мы разберем файловую структуру и немного затронем код, чтобы чуть-чуть понимать, что вообще из себя представляет команда, а дальше уже копнем более конкретно</p>
 </div>
 <p>Команды создаются через терминал</p>
 <div class="termy">
@@ -468,16 +582,7 @@
 
 <p>И состоят из 3х файлов:</p>
 <h2 id="mainpy"><code>main.py</code><a class="headerlink" href="#mainpy" title="Permanent link">&para;</a></h2>
-<p>Содержит весь основной код, обрабатывающий команды, выраженный функцией с некой "пачкой" декораторов, но также и задающий ей условия исполнения (например, какие-либо префиксы или ее имена на разных языках),</p>
-<div class="admonition todo">
-<p class="admonition-title">Todo</p>
-<p>Тут также будет описание для автодкументации (скорее всего, через докстринги), которая еще в процессе разработки. А возможно, для этого будет отдельный файл. Единственное, что могу сказать точно -- она будет сделана под <a href="https://squidfunk.github.io/mkdocs-material/">MKDocs Material</a>, как сделан и этот сайт. Надеюсь, стилистически он вам нравится :D</p>
-</div>
-<p>Код команды стоит разобрать на примемере, поэтому создайте нового бота (<code>$ bot new &lt;name&gt;</code>), либо выберите существующего и сделайте в нем команду <code>hello</code>, после чего откройте файл <code>src/hello/main.py</code></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>По умолчанию команда реагирует на свое имя, с которым вы ее создали. То есть <code>$ bot new foo</code> создает команду, реагирующую на <code>foo</code> в сообщении</p>
-</div>
+<p>Содержит весь основной код, обрабатывающий команды, выраженный функцией с некой "пачкой" декораторов, обычно, с возвращаемым значеним и, возможно, какими-то аргументами. Сам код команды стоит разобрать на примемере, поэтому создайте нового бота (<code>$ bot new &lt;name&gt;</code>), либо выберите существующего и сделайте в нем команду <code>hello</code> (<code>$ bot com hello</code>), после чего откройте файл <code>src/hello/main.py</code>, именно его содержание мы сейчас и разберем чисто поверхностно, чтобы привыкнуть к стилю кода</p>
 <hr />
 <p>Думаю, насчет импортов все понятно. О <code>config.py</code> речь пойдет чуть ниже</p>
 <div class="highlight"><pre><span></span><code><span class="hll"><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
@@ -494,7 +599,7 @@
     <span class="k">return</span> <span class="n">config</span><span class="o">.</span><span class="n">ANSWER</span>
 </code></pre></div>
 
-<p><strong>Cmd</strong> — <em>валидатор</em> (о них позже), в котором мы указываем, из каких имен и префиксов состоит команда, должна ли она быть чувствительна к регистру, что из себя представляют ее аргументы и прочее.</p>
+<p><strong>Cmd</strong> — <em>валидатор</em> (о них позже), в котором мы указываем, из каких имен и префиксов состоит команда, должна ли она быть чувствительна к регистру, что из себя представляют ее аргументы и другие настройки.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
 
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">config</span>
@@ -509,7 +614,7 @@
     <span class="k">return</span> <span class="n">config</span><span class="o">.</span><span class="n">ANSWER</span>
 </code></pre></div>
 
-<p><strong>Reaction</strong> — хэндлер <a href="https://vk.com/dev/groups_events">LongPoll событий</a>. <code>"message_new"</code> говорит о том, что команда реагирует на новое сообщение
+<p><strong>Reaction</strong> — хэндлер <a href="https://vk.com/dev/groups_events">LongPoll событий</a>. <code>"message_new"</code> говорит о том, что команда реагирует на событие нового сообщения
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
 
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">config</span>
@@ -551,6 +656,10 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 <span class="hll">    <span class="k">return</span> <span class="n">config</span><span class="o">.</span><span class="n">ANSWER</span>
 </span></code></pre></div></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>По умолчанию команда реагирует на свое имя, с которым вы ее создали. То есть <code>$ bot new foo</code> создает команду, реагирующую на <code>foo</code> в сообщении</p>
+</div>
 <h2 id="configpy"><code>config.py</code><a class="headerlink" href="#configpy" title="Permanent link">&para;</a></h2>
 <p><em>Изменяемые</em> настройки вашей команды. Всегда старайтесь выносить сюда имена, префиксы и прочее литеральные значения. Однако, вы можете обойтись и без этого файла, но мы рекомендуем вам стараться располагать все данные о конфигурации команды именно сюда. Почему? Вы вряд ли будете менять логику обработки, а вот какие-то ее параметры — вполне возможно. Заметьте, что здесь должны находиться настройки только для 1 команды, тобишь для той, для которой была выделена директория. Если вы хотите задать какой-то параметр, который легко будет доступен среди всех ваших команд (например, все ваши команды начинаются с одного и того же префикса), используйте <code>config.toml</code>, который можно получить через <code>vkquick.current.bot.config</code>.</p>
 <h2 id="__init__py"><code>__init__.py</code><a class="headerlink" href="#__init__py" title="Permanent link">&para;</a></h2>
@@ -564,6 +673,11 @@
 <span class="go">Command foo will be removed. Continue? (y/any) y</span>
 <span class="go">Command foo has been removed</span>
 </code></pre></div>
+</div>
+
+<div class="admonition todo">
+<p class="admonition-title">Todo</p>
+<p>Планируется добавить автогенератор документации по вашему коду, но как именно — пока еще не решено. Единственное, что могу сказать точно -- она будет сделана под <a href="https://squidfunk.github.io/mkdocs-material/">MKDocs Material</a>, как сделан и этот сайт. Надеюсь, стилистически он вам нравится :D</p>
 </div>
                 
               
