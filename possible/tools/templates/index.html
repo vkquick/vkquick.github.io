@@ -335,21 +335,45 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../../current-obj/" title="Current-объекты" class="md-nav__link">
+      Current-объекты
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../signals/" title="Сигналы" class="md-nav__link">
+      Сигналы
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-10" type="checkbox" id="nav-4-10" checked>
     
-    <label class="md-nav__link" for="nav-4-8">
+    <label class="md-nav__link" for="nav-4-10">
       Инструменты
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Инструменты" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-8">
+      <label class="md-nav__title" for="nav-4-10">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -472,17 +496,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#return-vqmessage-your-template-templatecarouseltitles" class="md-nav__link">
-    return vq.Message(
-    &quot;Your template&quot;,
-    template=carousel(titles)
-)
-
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -522,6 +535,18 @@
   <li class="md-nav__item">
     <a href="../docs-vm-graffiti/" title="Загрузка документов, гс, граффити" class="md-nav__link">
       Загрузка документов, гс, граффити
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user/" title="Пользователь" class="md-nav__link">
+      Пользователь
     </a>
   </li>
 
@@ -601,17 +626,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#return-vqmessage-your-template-templatecarouseltitles" class="md-nav__link">
-    return vq.Message(
-    &quot;Your template&quot;,
-    template=carousel(titles)
-)
-
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -634,11 +648,10 @@
                 
                   <h1>Карусели</h1>
                 
-                <p>Если вы не знакомы с каруселями в сообщениях, <a href="https://vk.com/dev/bot_docs_templates?f=5.%2BШаблоны%2Bсообщений">узнать об этом можно здесь</a></p>
-<p>Чтобы создать карусель, вам нужно сделать соответствующий генератор его элементов</p>
+                <p>Чтобы создать <a href="https://vk.com/dev/bot_docs_templates?f=5.%2BШаблоны%2Bсообщений">карусель</a>, вам нужно сделать соответствующий генератор его элементов</p>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
-<p>Что такое генераторы и <code>yield</code> можно узнать <a href="https://habr.com/ru/post/132554/">тут</a></p>
+<p>Если вы не знакомы с терминами <code>генератор</code> и <code>yield</code>, ознакомиться можно <a href="https://habr.com/ru/post/132554/">здесь</a></p>
 </div>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
 
@@ -671,7 +684,7 @@
 </code></pre></div>
 
 <h2 id="1">Шаг 1: Создайте генератор<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p>Поскольку элементы карусели одношаблонны, то нам достаточно просто пройтись циклом по нужным заголовкам, описаниям, клавиатуре и фотографии (если таковые имеются). Поэтому для начала создаем саму функцию, которая, к слову, может что-то принимать. Аргументы, которые вы хотите добавить в нее, используйте при вызове (пример в самом низу)</p>
+<p>Поскольку элементы карусели одношаблонны (т.е. выглядят одинаково), то нам достаточно просто пройтись циклом по нужным заголовкам, описаниям, клавиатуре и фотографиям (если таковые имеются). Поэтому для начала создаем саму функцию, которая, к слову, может что-то принимать. Аргументы, которые вы хотите добавить в нее, используйте при вызове (пример такого кейса в самом низу)</p>
 <div class="highlight"><pre><span></span><code><span class="hll"><span class="nd">@vq</span><span class="o">.</span><span class="n">Template</span><span class="p">()</span>
 </span><span class="hll"><span class="k">def</span> <span class="nf">carousel</span><span class="p">():</span>
 </span>    <span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Foo&quot;</span><span class="p">,</span> <span class="s2">&quot;Bar&quot;</span><span class="p">]</span>
@@ -697,7 +710,7 @@
 </span>    <span class="o">...</span>
 </code></pre></div></p>
 <h2 id="2">Шаг 2: Соберите данные для элементов<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<p>Ваша задача -- сделать yield элементов карусели. Что для этого нужно? Алгоритмом в примере мы создаем список заголовков, описаний и <strong>клавиатур</strong> (здесь без <code>Keyboard</code>, чисто списко <code>Button</code>'ов). После чего проходимся фором по <code>zip</code>'ованным спискам (на каждый n-ный элемент списка возвращается кортеж из всех)</p>
+<p>Ваша задача — сделать yield элементов карусели. Что для этого нужно? Алгоритмом в примере мы создаем список заголовков, описаний и <strong>клавиатур</strong> (здесь без <code>Keyboard</code>, только список <code>Button</code>'ов). После чего проходимся <code>for</code>'ом по <code>zip</code>'ованным спискам (на каждый n-ный элемент списка возвращается кортеж из всех)</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@vq</span><span class="o">.</span><span class="n">Template</span><span class="p">()</span>
 <span class="k">def</span> <span class="nf">carousel</span><span class="p">():</span>
 <span class="hll">    <span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Foo&quot;</span><span class="p">,</span> <span class="s2">&quot;Bar&quot;</span><span class="p">]</span>
@@ -718,7 +731,7 @@
 </code></pre></div>
 
 <h2 id="3">Шаг 3: Создаем объект элемента<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<p>После того, как мы получили данные для каждого из элементов -- создаем соответствующий инстанс</p>
+<p>После того, как мы получили данные для каждого из элементов — создаем соответствующий инстанс</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@vq</span><span class="o">.</span><span class="n">Template</span><span class="p">()</span>
 <span class="k">def</span> <span class="nf">carousel</span><span class="p">():</span>
     <span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Foo&quot;</span><span class="p">,</span> <span class="s2">&quot;Bar&quot;</span><span class="p">]</span>
@@ -764,14 +777,15 @@
 <span class="hll">        <span class="k">yield</span> <span class="n">elem</span><span class="o">.</span><span class="n">open_link</span><span class="p">(</span><span class="s2">&quot;https://google.com&quot;</span><span class="p">)</span>
 </span></code></pre></div></p>
 <h2 id="5-yield">Шаг 5: yield Элемента<a class="headerlink" href="#5-yield" title="Permanent link">&para;</a></h2>
-<p>Последним этами нам нужно <code>yield</code>'нуть элемент</p>
+<p>Последним этапом нам нужно <code>yield</code>'нуть элемент</p>
 <h2 id="6">Шаг 6: Вызов карусели<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <p>Теперь нам нужно лишь вызвать карусель и ее можно прикреплять к полю <code>template</code> в классе <code>Messsage</code></p>
-<h2 id="return-vqmessage-your-template-templatecarouseltitles"><div class="highlight"><pre><span></span><code><span class="k">return</span> <span class="n">vq</span><span class="o">.</span><span class="n">Message</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">return</span> <span class="n">vq</span><span class="o">.</span><span class="n">Message</span><span class="p">(</span>
     <span class="s2">&quot;Your template&quot;</span><span class="p">,</span>
-<span class="hll">    <span class="n">template</span><span class="o">=</span><span class="n">carousel</span><span class="p">(</span><span class="n">titles</span><span class="p">)</span>
+<span class="hll">    <span class="n">template</span><span class="o">=</span><span class="n">carousel</span><span class="p">()</span>
 </span><span class="p">)</span>
-</code></pre></div><a class="headerlink" href="#return-vqmessage-your-template-templatecarouseltitles" title="Permanent link">&para;</a></h2>
+</code></pre></div>
+
 <p>Вы также можете создать карусель через метод <code>by</code>, передав туда словарь, <a href="https://vk.com/dev/bot_docs_templates?f=5.1.%2BКарусели">описывающий схему карусели</a></p>
 <div class="admonition todo">
 <p class="admonition-title">Todo</p>

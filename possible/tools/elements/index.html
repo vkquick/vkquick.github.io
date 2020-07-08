@@ -330,21 +330,45 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../../current-obj/" title="Current-объекты" class="md-nav__link">
+      Current-объекты
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../signals/" title="Сигналы" class="md-nav__link">
+      Сигналы
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-10" type="checkbox" id="nav-4-10" checked>
     
-    <label class="md-nav__link" for="nav-4-8">
+    <label class="md-nav__link" for="nav-4-10">
       Инструменты
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Инструменты" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-8">
+      <label class="md-nav__title" for="nav-4-10">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -444,6 +468,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user/" title="Пользователь" class="md-nav__link">
+      Пользователь
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -476,20 +512,22 @@
                 
                   <h1>Элементы</h1>
                 
-                <p>Элементы -- составляющая карусели. Иницициализация происходит 2мя способами</p>
+                <p>Элементы — составляющая карусели. Иницициализация происходит 2мя способами</p>
 <ol>
-<li>Через метод <code>by</code>, который принимает словарь, описывающий схему элемента карусели</li>
-<li>Через инициализацию, передачая соответсвющие поля:<ul>
-<li>buttons</li>
-<li>title</li>
-<li>description</li>
-<li>photo_id</li>
+<li>Через метод <code>by</code>, который принимает словарь, описывающий схему элемента карусели (точно также как предыдущие)</li>
+<li>Через инициализацию, передавая соответсвющие поля:<ul>
+<li><code>buttons</code>: Список кнопок</li>
+<li><code>title</code>: Заголовок элемента</li>
+<li><code>description</code>: Описание элемента</li>
+<li><code>photo_id</code>: ID владельца и ID самой фотографии, соединенные <code>_</code></li>
 </ul>
 </li>
 </ol>
-<p>После чего нужно обозначить действие, которое должно происходить по нажатию на элемент: открытие сайта либо открытие фотографии элемента</p>
-<p><code>vq.Element(......).open_link("https://google.com")</code></p>
-<p><code>vq.Element(......).open_photo()</code></p>
+<p>После чего нужно обозначить действие, которое должно происходить по нажатию на элемент: открытие сайта, либо открытие фотографии элемента</p>
+<ul>
+<li><code>vq.Element(......).open_link("https://google.com")</code></li>
+<li><code>vq.Element(......).open_photo()</code></li>
+</ul>
 <p>Содержимая схема в виде словаря находится в поле <code>info</code></p>
                 
               

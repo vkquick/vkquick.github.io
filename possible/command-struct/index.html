@@ -388,18 +388,42 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../current-obj/" title="Current-объекты" class="md-nav__link">
+      Current-объекты
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../signals/" title="Сигналы" class="md-nav__link">
+      Сигналы
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-10" type="checkbox" id="nav-4-10">
     
-    <label class="md-nav__link" for="nav-4-8">
+    <label class="md-nav__link" for="nav-4-10">
       Инструменты
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Инструменты" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-8">
+      <label class="md-nav__title" for="nav-4-10">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -488,6 +512,18 @@
   <li class="md-nav__item">
     <a href="../tools/docs-vm-graffiti/" title="Загрузка документов, гс, граффити" class="md-nav__link">
       Загрузка документов, гс, граффити
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/user/" title="Пользователь" class="md-nav__link">
+      Пользователь
     </a>
   </li>
 
@@ -582,7 +618,7 @@
 
 <p>И состоят из 3х файлов:</p>
 <h2 id="mainpy"><code>main.py</code><a class="headerlink" href="#mainpy" title="Permanent link">&para;</a></h2>
-<p>Содержит весь основной код, обрабатывающий команды, выраженный функцией с некой "пачкой" декораторов, обычно, с возвращаемым значеним и, возможно, какими-то аргументами. Сам код команды стоит разобрать на примемере, поэтому создайте нового бота (<code>$ bot new &lt;name&gt;</code>), либо выберите существующего и сделайте в нем команду <code>hello</code> (<code>$ bot com hello</code>), после чего откройте файл <code>src/hello/main.py</code>, именно его содержание мы сейчас и разберем чисто поверхностно, чтобы привыкнуть к стилю кода</p>
+<p>Содержит весь основной код, обрабатывающий команды, выраженный функцией с некой "пачкой" декораторов, обычно, с возвращаемым значеним и, возможно, какими-то аргументами. Сам код команды стоит разобрать на примемере, поэтому создайте нового бота (<code>$ bot new &lt;name&gt;</code>), либо выберите существующего и сделайте в нем команду <code>hello</code> (<code>$ bot com hello</code>), после чего откройте файл <code>src/hello/main.py</code>, именно его содержание мы сейчас разберем, чтобы привыкнуть к стилю кода</p>
 <hr />
 <p>Думаю, насчет импортов все понятно. О <code>config.py</code> речь пойдет чуть ниже</p>
 <div class="highlight"><pre><span></span><code><span class="hll"><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
@@ -663,7 +699,7 @@
 <h2 id="configpy"><code>config.py</code><a class="headerlink" href="#configpy" title="Permanent link">&para;</a></h2>
 <p><em>Изменяемые</em> настройки вашей команды. Всегда старайтесь выносить сюда имена, префиксы и прочее литеральные значения. Однако, вы можете обойтись и без этого файла, но мы рекомендуем вам стараться располагать все данные о конфигурации команды именно сюда. Почему? Вы вряд ли будете менять логику обработки, а вот какие-то ее параметры — вполне возможно. Заметьте, что здесь должны находиться настройки только для 1 команды, тобишь для той, для которой была выделена директория. Если вы хотите задать какой-то параметр, который легко будет доступен среди всех ваших команд (например, все ваши команды начинаются с одного и того же префикса), используйте <code>config.toml</code>, который можно получить через <code>vkquick.current.bot.config</code>.</p>
 <h2 id="__init__py"><code>__init__.py</code><a class="headerlink" href="#__init__py" title="Permanent link">&para;</a></h2>
-<p>Сюда происходит импорт вашей команды, но вы также могли заметить, что она импортируется и в <code>src/__init__.py</code>, и поэтому, чтобы перименновать или удалить команду <code>чисто</code>, т.е. не оставляя лишних некорректных импортов, используйте соотвествующие флаги <code>-r</code> и <code>-d</code></p>
+<p>Сюда происходит импорт вашей команды, но вы также могли заметить, что она импортируется и в <code>src/__init__.py</code>, и поэтому, чтобы перименновать или удалить команду <em>чисто</em>, т.е. не оставляя лишних некорректных импортов, используйте соотвествующие флаги <code>-r</code> и <code>-d</code></p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code><span class="gp">$</span> bot com some_name -r new_name
@@ -677,7 +713,7 @@
 
 <div class="admonition todo">
 <p class="admonition-title">Todo</p>
-<p>Планируется добавить автогенератор документации по вашему коду, но как именно — пока еще не решено. Единственное, что могу сказать точно -- она будет сделана под <a href="https://squidfunk.github.io/mkdocs-material/">MKDocs Material</a>, как сделан и этот сайт. Надеюсь, стилистически он вам нравится :D</p>
+<p>Планируется добавить автогенератор документации по вашему коду, но как именно — пока еще не решено. Единственное, что могу сказать точно — она будет сделана под <a href="https://squidfunk.github.io/mkdocs-material/">MKDocs Material</a>, как сделан и этот сайт. Надеюсь, стилистически он вам нравится :D</p>
 </div>
                 
               

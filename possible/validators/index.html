@@ -421,18 +421,42 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../current-obj/" title="Current-объекты" class="md-nav__link">
+      Current-объекты
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../signals/" title="Сигналы" class="md-nav__link">
+      Сигналы
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-10" type="checkbox" id="nav-4-10">
     
-    <label class="md-nav__link" for="nav-4-8">
+    <label class="md-nav__link" for="nav-4-10">
       Инструменты
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Инструменты" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-8">
+      <label class="md-nav__title" for="nav-4-10">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -521,6 +545,18 @@
   <li class="md-nav__item">
     <a href="../tools/docs-vm-graffiti/" title="Загрузка документов, гс, граффити" class="md-nav__link">
       Загрузка документов, гс, граффити
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/user/" title="Пользователь" class="md-nav__link">
+      Пользователь
     </a>
   </li>
 
@@ -672,7 +708,7 @@
 <h2 id="_1">Валидаторы из коробки<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>Все валидаторы можно получить обращаясь к модулю <code>vkquick</code>, т.е. <code>vq.Cmd</code>, <code>vq.Action</code></p>
 <h3 id="cmd"><code>Cmd</code><a class="headerlink" href="#cmd" title="Permanent link">&para;</a></h3>
-<p>Обработчик текстовой команды. Принимает в себя следующие поля:</p>
+<p>Обработчик текстовой команды. Принимает в себя следующие аргументы при инициализации:</p>
 <table>
 <thead>
 <tr>
@@ -727,7 +763,7 @@
 </div>
 <h4 id="_2">О получении аргументов команды<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <p>Наверно, самая важная и самая актуальная тема. Если вы обратили внимание на пример выше, то заметили новый <code>vq.Word</code> и <del>внезапно</del> built-it класс <code>int</code>. И так, как же это работает</p>
-<p>Для того, чтобы указать, что у команды есть какой-то аргумент (какое-то упоминание, числои прочее), нужно использовать соответствующий класс, унаследованный от <code>vq.CommandArgument</code>, в аннотациях. Например, команда, принимающая <strong>слово</strong> и <strong>число</strong> будет выглядеть так</p>
+<p>Для того, чтобы указать, что у команды есть какой-то аргумент (какое-то упоминание, число и прочее), нужно использовать соответствующий класс, унаследованный от <code>vq.CommandArgument</code>, в аннотациях. Например, команда, принимающая <strong>слово</strong> и <strong>число</strong> будет выглядеть так</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
 
 
@@ -759,7 +795,7 @@
 <p class="admonition-title">Note</p>
 <p>Заметьте, что <code>vq.Integer</code> сразу вернул число, посколько строка обернулась в поле <strong>factory</strong>. О нем чуть ниже</p>
 </div>
-<p>Я думаю, что достаточно очевидно, как этим пользоваться — просто обозначаешь нужные аргументы <strong>нужными</strong> типами (о ни ниже). Но что насчет payload-типов? Вы можете без проблем использовать и то, и другое в аргументах функции. <strong>vkquick</strong> поймет, что для чего. Например, код выше, но с использвоанием <code>vq.Sender()</code></p>
+<p>Я думаю, что достаточно очевидно, как этим пользоваться — просто обозначаешь нужные аргументы <strong>нужными</strong> типами (о них ниже). Но что насчет payload-типов? Вы можете без проблем использовать и то, и другое в аргументах функции. <strong>vkquick</strong> поймет, что для чего. Например, код выше, но с использованием <code>vq.Sender()</code></p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
 
 
@@ -769,7 +805,7 @@
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sender</span><span class="o">.</span><span class="n">fn</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">val</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">num</span><span class="si">=}</span><span class="s2">&quot;</span>
 </code></pre></div>
 
-<p>Теперь команда при ответе доабвит мое имя в начале</p>
+<p>Теперь команда при ответе добавит имя отправителя в начале сообщения</p>
 <p>И, конечно же, слово и число — не единственные типы. <del>Вот они по порядку, слева направо: ворд, интегер, юзверьменьшион...</del></p>
 <table>
 <thead>
@@ -803,13 +839,13 @@
 <td><code>List</code></td>
 <td><code>list</code></td>
 <td>-</td>
-<td>Список каких-либо <code>CommandArgument</code>. Принимает аргументы: <code>sep</code> для разделителя, по умолчанию <code>(?:\s*,\s*|\s+)</code>, <code>min_</code> (1) и <code>max_</code> (не ограничено, <code>Ellipsis</code>) для минимального и максимального количества элементов. Вы также можете просто обернуть тип в квадратные скобки, и он будет списковым, тобишь <code>[int]</code> — это аналог <code>List(Integer)</code></td>
+<td>Список каких-либо <code>CommandArgument</code>. Принимает аргументы: <code>sep</code> для разделителя, по умолчанию <code>(?:\s*,\s*|\s+)</code>, <code>min_</code> (1) и <code>max_</code> (не ограничено, <code>Ellipsis</code>) для минимального и максимального количества элементов. Вы также можете просто обернуть тип в квадратные скобки, и он будет списковым, тобишь <code>[int]</code> — это аналог <code>List(Integer())</code></td>
 </tr>
 <tr>
 <td><code>UserMention</code></td>
 <td><code>User</code></td>
 <td><code>\[id\d+\|.+?\]</code></td>
-<td>Упоминание <strong>пользователя</strong>. Работает исключительно на упоминание, тобишь ни ссылки, ни просто цифры ID не сработают (скорее всего такая поддержка будет чуть позже). Принимает в себя поля для поля <code>fields</code> метода <code>users.get</code>, т.к. возвращает объект пользователя</td>
+<td>Упоминание <strong>пользователя</strong>. Работает исключительно на упоминание, тобишь ни ссылки, ни просто цифры ID не сработают (скорее всего такая поддержка будет чуть позже). Принимает в себя поля‘ для по‘ля <code>fields</code> метода <code>users.get</code>, т.к. возвращает объект пользователя</td>
 </tr>
 <tr>
 <td><code>Literal</code></td>

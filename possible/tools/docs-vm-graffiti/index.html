@@ -330,21 +330,45 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../../current-obj/" title="Current-объекты" class="md-nav__link">
+      Current-объекты
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../signals/" title="Сигналы" class="md-nav__link">
+      Сигналы
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-10" type="checkbox" id="nav-4-10" checked>
     
-    <label class="md-nav__link" for="nav-4-8">
+    <label class="md-nav__link" for="nav-4-10">
       Инструменты
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Инструменты" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-8">
+      <label class="md-nav__title" for="nav-4-10">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -444,6 +468,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user/" title="Пользователь" class="md-nav__link">
+      Пользователь
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -481,13 +517,13 @@
 <li>В сообщение (статический метод <code>message</code>)</li>
 <li>На стену (Статический метод <code>wall</code>)</li>
 </ul>
-<p>Каждый из этих методов принимает соотвествующие аргументы для методов, получающих <code>upload_url</code>, и принимает поле <code>file</code>, представляющее собой одно из следующих инстансов:</p>
+<p>Каждый из этих методов принимает соотвествующие аргументы для методов, получающих <code>upload_url</code> (аналогично загрузчкиу фотографий), и принимает поле <code>file</code>, представляющее собой одно из следующих инстансов:</p>
 <ol>
 <li><code>BytesIO</code>/<code>TextIOWrapper</code> объект</li>
 <li>Поток байтов/строка</li>
 <li><code>pathlib.Path</code> до файла</li>
 </ol>
-<p>После нужно вызвать корутинный метод <code>__call__</code>, передав параметры для соответствующего метода <code>.save</code>. В ответ вы получите объект, хранящий VK API'шный объект документа аналогично объекту <code>Photo</code> (с теми же полями и возможностями)</p>
+<p>После нужно вызвать корутинный метод <code>__call__</code>, передав параметры для соответствующего VK API метода <code>.save</code>. В ответ вы получите объект, хранящий VK API'шный объект документа аналогично объекту <code>Photo</code> (с теми же полями и возможностями)</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>Загрузка документа в сообщение
@@ -496,7 +532,7 @@
 <span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
 
 
-<span class="nd">@vq</span><span class="o">.</span><span class="n">Cmd</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;doc&quot;</span><span class="p">])</span>
+<span class="nd">@vq</span><span class="o">.</span><span class="n">Cmd</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;send doc&quot;</span><span class="p">])</span>
 <span class="nd">@vq</span><span class="o">.</span><span class="n">Reaction</span><span class="p">(</span><span class="s2">&quot;message_new&quot;</span><span class="p">)</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">doc</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">vq</span><span class="o">.</span><span class="n">Event</span><span class="p">()):</span>
     <span class="n">doc</span> <span class="o">=</span> <span class="k">await</span> <span class="n">vq</span><span class="o">.</span><span class="n">Doc</span><span class="o">.</span><span class="n">message</span><span class="p">(</span>
@@ -540,6 +576,20 @@
             </div>
           </a>
         
+        
+          <a href="../user/" title="Пользователь" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Вперед
+                </span>
+                Пользователь
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
         
       </nav>
     </div>

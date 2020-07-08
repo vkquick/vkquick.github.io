@@ -429,18 +429,42 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../current-obj/" title="Current-объекты" class="md-nav__link">
+      Current-объекты
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../signals/" title="Сигналы" class="md-nav__link">
+      Сигналы
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-10" type="checkbox" id="nav-4-10">
     
-    <label class="md-nav__link" for="nav-4-8">
+    <label class="md-nav__link" for="nav-4-10">
       Инструменты
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Инструменты" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-8">
+      <label class="md-nav__title" for="nav-4-10">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -529,6 +553,18 @@
   <li class="md-nav__item">
     <a href="../tools/docs-vm-graffiti/" title="Загрузка документов, гс, граффити" class="md-nav__link">
       Загрузка документов, гс, граффити
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/user/" title="Пользователь" class="md-nav__link">
+      Пользователь
     </a>
   </li>
 
@@ -650,7 +686,7 @@
                 
                   <h1>Payload-типы</h1>
                 
-                <p>До этого момента функции-обработчики наших реакций не имели никаких аргументов, однако, они это могут. Но вот вопрос — как <code>Reaction</code> узнает, чем должны быть аргументы и что вообще они могут содержать, да и вообще, нужны ли они? Ответ <del>убил</del> прост — да, с помощью <a href="https://www.python.org/dev/peps/pep-3107/">аннотационных типов</a> можно, например, получить объект сообщения, пользователя, отправившего это сообщения, список с фотографиями из сообщения, объект, позволяющий вызывать методы вк, да в прицнипе, что угодно, не проводя лишнюю возню с API. Штош, допустим, мы хотим узнать время отправки сообщения, как это сделать? перейдем к примеру</p>
+                <p>До этого момента функции-обработчики наших реакций не имели никаких аргументов, однако, они это могут. Но вот вопрос — как <code>Reaction</code> узнает, чем должны быть аргументы и что вообще они могут содержать, да и в принципе, нужны ли они? Ответ <del>убил</del> прост — да, с помощью <a href="https://www.python.org/dev/peps/pep-3107/">аннотационных типов</a> можно, например, получить объект сообщения, пользователя, отправившего это сообщения, список с фотографиями из сообщения, объект, позволяющий вызывать методы вк, вообще, что угодно, не проводя лишнюю возню с API. Допустим, мы хотим узнать время отправки сообщения, как это сделать? Перейдем к примеру</p>
 <p>Создадим команду <code>get_time</code> в боте, а в <code>src/get_time/main.py</code> вставим следующее</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
@@ -665,8 +701,9 @@
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Время отправки: </span><span class="si">{</span><span class="n">time</span><span class="si">:</span><span class="s2">%H:%M</span><span class="si">}</span><span class="s2">&quot;</span>
 </code></pre></div>
 
-<p>После чего запускаем бота через <code>$ bot run --debug</code>, переходим к нему в лс и пишем любое сообщение, на что бот нам пришлет его время отправки. Вуа-ля!</p>
-<p>Рассмотрим то, что мы написали в аргументах. Функция <code>get_time</code> принимает в свой единственный аргумент <code>event</code> объект <a href="https://vk.com/dev/groups_events">события нового сообщения</a> (<code>message_new</code>), где в <code>event.object.message</code> хранится информация <a href="https://vk.com/dev/objects/message">о самом сообщении</a>, одно из полей которого — <code>date</code>, содержащее время отправки сообщения в <a href="https://ru.wikipedia.org/wiki/Unix-время">timestamp</a>. После чего с помощью модуля <code>datetime</code> мы превращаем datetime в human-вид (оставляя часы и минуты) в процессе интерполяции в f-строку. Нам потребовалось реализовать в логике всего пару физических строк, остальное взял на себя <strong>vkquick</strong></p>
+<p>После чего запускаем бота через <code>$ bot run --reload --debug</code>, переходим к нему в лс и пишем любое сообщение, на что бот нам пришлет его время отправки. Вуа-ля!</p>
+<p>Рассмотрим то, что мы написали в аргументах. Функция <code>get_time</code> принимает в свой единственный аргумент <code>event</code> объект <a href="https://vk.com/dev/groups_events">события нового сообщения</a> (<code>message_new</code>), где в <code>event.object.message</code> хранится информация <a href="https://vk.com/dev/objects/message">о самом сообщении</a>, одно из полей которого — <code>date</code>, содержащее время отправки сообщения в <a href="https://ru.wikipedia.org/wiki/Unix-время">timestamp</a>. После чего с помощью модуля <code>datetime</code> мы превращаем datetime в human-вид, оставляя часы и минуты в процессе интерполяции в f-строку.</p>
+<p>Нам потребовалось реализовать в логике всего пару физических строк, остальное взял на себя <strong>vkquick</strong></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Обратите внимание на скобки у <code>vq.Event</code>. Для каждого payload-типа они <strong>обязательны</strong>, кроме нескольких исключений: <code>vq.API</code>, <code>vq.Bot</code> и аллиасные типы для аргументов текстовой команды, о которых речь пойдет позже</p>
@@ -674,9 +711,9 @@
 <h2 id="payload-">Payload-типы из коробки<a class="headerlink" href="#payload-" title="Permanent link">&para;</a></h2>
 <p>Каждый тип доступен из модуля через обращение по точке, т.е. <code>vq.Event</code>, <code>vq.Sender</code></p>
 <h3 id="event"><code>Event</code><a class="headerlink" href="#event" title="Permanent link">&para;</a></h3>
-<p>Возвращает объект пришедшего события. Само по себе событие JSON, но с помощью <a href="https://pypi.org/project/attrdict/1.2.0/"><code>attrdict</code></a> вы можете получать ключи через точку. О всех событиях и их структуре можно почитать <a href="(https://vk.com/dev/groups_events)">здесь</a>. Не принимает аргументов при вызове</p>
+<p>Возвращает объект пришедшего события. Само по себе событие это словарь, но с помощью <a href="https://pypi.org/project/attrdict/1.2.0/"><code>attrdict</code></a> вы можете получать ключи через точку. О всех событиях и их структуре можно почитать <a href="(https://vk.com/dev/groups_events)">здесь</a>. Не принимает аргументов при вызове</p>
 <h3 id="sender"><code>Sender</code><a class="headerlink" href="#sender" title="Permanent link">&para;</a></h3>
-<p>Возвращает свой объект пользователя <code>vq.User</code>, отправившего сообщение, с <em>полями быстрого доступа</em> и собственным форматированием. Принимает список *аргсов для <code>fields</code> параметра в <a href="https://vk.com/dev/users.get"><code>users.get</code></a>, тобишь <code>vq.Sender("bdate")</code> вернет пользователя</p>
+<p>Возвращает свой объект пользователя <code>vq.User</code>, отправившего сообщение, с <em>полями быстрого доступа</em> и собственным форматированием. Принимает список *аргсов для <code>fields</code> параметра в <a href="https://vk.com/dev/users.get"><code>users.get</code></a> и аргумент <code>name_case</code> для определения падежа имени и фамилии, тобишь <code>vq.Sender("bdate")</code> вернет пользователя</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>Если написать боту <code>myname</code>, то он вернет имя пользователя, отправившего сообщение
@@ -696,13 +733,13 @@
 <h3 id="replieduser"><code>RepliedUser</code><a class="headerlink" href="#replieduser" title="Permanent link">&para;</a></h3>
 <p>Возвращает пользователя <code>vq.User</code> из пересланного сообщения, если таковой имеется, иначе <code>None</code>. принимает аналогичные для <code>Sender</code> поля</p>
 <h3 id="fwdusers"><code>FwdUsers</code><a class="headerlink" href="#fwdusers" title="Permanent link">&para;</a></h3>
-<p>Возвращает <strong>список</strong> из пользователей <code>vq.User</code>, попавших в пересланные сообщения (на самом верхнем уровне глубины). Переданные поля для <code>fields</code> добудуться для каждого из пользователей</p>
+<p>Возвращает <strong>список</strong> из пользователей <code>vq.User</code>, попавших в пересланные сообщения (на самом верхнем уровне глубины). Переданные поля для <code>fields</code> и <code>name_case</code> добудуться для каждого из пользователей</p>
 <h3 id="clientinfo"><code>ClientInfo</code><a class="headerlink" href="#clientinfo" title="Permanent link">&para;</a></h3>
 <p>Возвращает информацию о клиенте по доступным возможностям (может ли он работать с клаиватурой, с каруселями, какие кнопки поддерживает и прочее). Просто быстрый доступ к <code>event.object.client_info</code></p>
 <h3 id="api-bot"><code>API</code> и <code>Bot</code><a class="headerlink" href="#api-bot" title="Permanent link">&para;</a></h3>
 <p>Сессионные <strong>объекты</strong>, поэтому для того, чтобы получить их в аннотациях, скобки ставить не нужно. Их описание находится на отдельной странице</p>
 <h2 id="_1">Кастомный тип<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>Для того, чтобы создать свой аннотационный тип, унаследуйтесь от базового класса для всех аннотаций <code>vq.Annotype</code>. После чего нужно будет переопределить абстрактный async/sync метод <code>prepare</code>. Именно он вызывается у аннотационного для определня значения аргумента. Метод принимает в себя следующие параметры</p>
+<p>Для того, чтобы создать свой аннотационный тип, унаследуйтесь от базового класса для всех аннотаций <code>vq.Annotype</code>. После чего нужно будет переопределить абстрактный async/sync метод <code>prepare</code>. Именно он вызывается у payload-типа для определения значения аргумента. Метод принимает в себя следующие параметры:</p>
 <table>
 <thead>
 <tr>

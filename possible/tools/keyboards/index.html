@@ -335,21 +335,45 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../../current-obj/" title="Current-объекты" class="md-nav__link">
+      Current-объекты
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../signals/" title="Сигналы" class="md-nav__link">
+      Сигналы
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-10" type="checkbox" id="nav-4-10" checked>
     
-    <label class="md-nav__link" for="nav-4-8">
+    <label class="md-nav__link" for="nav-4-10">
       Инструменты
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Инструменты" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-8">
+      <label class="md-nav__title" for="nav-4-10">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -408,7 +432,7 @@
       
         <li class="md-nav__item">
   <a href="#keyboard" class="md-nav__link">
-    Класс Keyboard
+    Keyboard
   </a>
   
 </li>
@@ -480,6 +504,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user/" title="Пользователь" class="md-nav__link">
+      Пользователь
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -515,7 +551,7 @@
       
         <li class="md-nav__item">
   <a href="#keyboard" class="md-nav__link">
-    Класс Keyboard
+    Keyboard
   </a>
   
 </li>
@@ -542,7 +578,7 @@
                 
                   <h1>Клавиатуры</h1>
                 
-                <p>Вы можете отправить клавиатуру в сообщении, используя пользуясь лишь корректно составленный словарь и <code>json.dumps</code></p>
+                <p>Вы можете отправить <a href="https://vk.com/dev/bots_docs_3?f=4.%20Клавиатуры%20для%20ботов">клавиатуру в сообщении</a>, используя лишь корректно составленный словарь и <code>json.dumps</code></p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
 
 <span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
@@ -588,7 +624,7 @@
     <span class="p">)</span>
 </code></pre></div>
 
-<p>Либо воспользоваться автодампом</p>
+<p>Либо используя автодамп</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
 
 
@@ -632,8 +668,8 @@
     <span class="p">)</span>
 </code></pre></div>
 
-<p>Либо использовать один из методов конструктора (рекомендуемо по очевидным причинам)</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Задать сразу все кнопки</label><div class="tabbed-content">
+<p>Либо используя один из методов конструктора (рекомендуемо из-за своей краткойсти и читабельности)</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Задавая сразу все кнопки</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
 
 
@@ -654,7 +690,7 @@
 </code></pre></div>
 
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Задать кнопки поэтапно</label><div class="tabbed-content">
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Задавая кнопки поэтапно</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
 
 
@@ -675,7 +711,7 @@
 
 </div>
 </div>
-<h2 id="keyboard">Класс <code>Keyboard</code><a class="headerlink" href="#keyboard" title="Permanent link">&para;</a></h2>
+<h2 id="keyboard"><code>Keyboard</code><a class="headerlink" href="#keyboard" title="Permanent link">&para;</a></h2>
 <p>Создает кливиатуру 3мя способами:</p>
 <ol>
 <li>
