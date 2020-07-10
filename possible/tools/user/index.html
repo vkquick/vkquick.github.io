@@ -648,6 +648,30 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../contributing/" title="Контрибьюторам" class="md-nav__link">
+      Контрибьюторам
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../releases/" title="Релизы" class="md-nav__link">
+      Релизы
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -765,7 +789,7 @@
 <tr>
 <td><code>info</code></td>
 <td><code>AttrMap</code></td>
-<td>Содержит весь ответ, полученный от <code>users.get</code> (Первый элемент респонза, т.е. вся информация о конкретном пользователе)</td>
+<td>Содержит весь ответ, полученный от <code>users.get</code> (Первый элемент поля <code>response</code> в ответе, т.е. вся информация о конкретном пользователе)</td>
 </tr>
 <tr>
 <td><code>fn</code></td>
@@ -789,7 +813,7 @@
 <ul>
 <li>
 <p><code>__format__</code>: форматирование подставит атрибуты объекта в строку, если они обернуты в <code>&lt;&gt;</code>, т.е.
-    <div class="highlight"><pre><span></span><code><span class="n">user</span> <span class="o">=</span> <span class="k">await</span> <span class="n">vq</span><span class="o">.</span><span class="n">User</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">get_info</span><span class="p">(</span><span class="s2">&quot;bdate&quot;</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><code><span class="n">user</span> <span class="o">=</span> <span class="k">await</span> <span class="n">vq</span><span class="o">.</span><span class="n">User</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">get_info</span><span class="p">(</span><span class="s2">&quot;bdate&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">user</span><span class="si">:</span><span class="s2">&lt;fn&gt; &lt;ln&gt; &lt;info.bdate&gt;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
     Выведет <code>Павел Дуров 10.10.1984</code></p>
