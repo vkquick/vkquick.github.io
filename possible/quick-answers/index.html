@@ -373,6 +373,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Отправка сразу
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callback-" class="md-nav__link">
+    Ответ на нажатие callback-кнопки
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -674,6 +688,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Отправка сразу
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callback-" class="md-nav__link">
+    Ответ на нажатие callback-кнопки
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -766,9 +794,24 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Вы не можете использовать yield вместе с <code>vq.Message</code> или return. Но возможность "накапливания" аргументов для отправки появится позже</p>
+<p>Вы не можете использовать yield вместе с <code>vq.Message</code> или return</p>
 </div>
-<p>Однако, вы все еще можете использовать "ручное" управление и отправить сообщение по старинке. Например, если нужно что-то сделать после отправки</p>
+<h2 id="_1">Отправка сразу<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Вы также можете отправить сообщение внутри реакции сразу и продолжить выполнять какой-то код, предварительно используя <code>vq.Message()</code> как payload-тип</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
+
+
+<span class="nd">@vq</span><span class="o">.</span><span class="n">Reaction</span><span class="p">(</span><span class="s2">&quot;message_new&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">answer</span><span class="p">:</span> <span class="n">vq</span><span class="o">.</span><span class="n">Message</span><span class="p">()):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Отправит 3 сообщения</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">await</span> <span class="n">answer</span><span class="p">(</span><span class="s2">&quot;Lorem ipsum&quot;</span><span class="p">,</span> <span class="n">disable_mentions</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">answer</span><span class="p">(</span><span class="s2">&quot;Ipsum lorem&quot;</span><span class="p">,</span> <span class="n">keyboard</span><span class="o">=</span><span class="n">vq</span><span class="o">.</span><span class="n">Keyboard</span><span class="o">.</span><span class="n">empty</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">vq</span><span class="o">.</span><span class="n">Message</span><span class="p">(</span><span class="s2">&quot;Star it pls: https://github.com/Rhinik/vkquick&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Однако, вы все еще можете использовать "ручное" управление и отправить сообщение по старинке</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
 
 
@@ -783,13 +826,31 @@
     <span class="c1"># Doing smth</span>
 </code></pre></div>
 
-<div class="admonition todo">
-<p class="admonition-title">Todo</p>
-<p>Для <code>vq.Message</code> в v0.2 планируется добавить метод <code>send</code>, чтобы была возможность быстрой отправки сообщения и исполнение какого-либо кода без использования подхода, показанного выше</p>
-</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Для сообщений, отправленных от лица пользователя (хотя vkquick не подразумевает создание юзерботов) вручную, можете использовать функцию <code>random_id</code>, опционально принимающая диапазон генерируемого <code>±</code>числа  </p>
+</div>
+<h2 id="callback-">Ответ на нажатие callback-кнопки<a class="headerlink" href="#callback-" title="Permanent link">&para;</a></h2>
+<p>Вместо вызова <code>messages.sendMessageEventAnswer</code> вы можете использовать payload-аргумент <code>CallbackAnswer</code>. Вызовите метод, соответствующий типу события, которое должно случиться и передайте соответствующие аргументы</p>
+<p>Всевозможные типы</p>
+<ul>
+<li><code>show_snackbar</code></li>
+<li><code>open_link</code></li>
+<li><code>open_app</code></li>
+</ul>
+<p>принимает в себя соответствующие аргументы, требуемые для поля <code>event_data</code></p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
+
+
+<span class="nd">@vq</span><span class="o">.</span><span class="n">Reaction</span><span class="p">(</span><span class="s2">&quot;message_event&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">callback_handler</span><span class="p">(</span>
+    <span class="n">cbanswer</span><span class="p">:</span> <span class="n">vq</span><span class="o">.</span><span class="n">CallbackAnswer</span><span class="p">()</span>
+<span class="p">):</span>
+    <span class="k">await</span> <span class="n">cbanswer</span><span class="o">.</span><span class="n">show_snackbar</span><span class="p">(</span><span class="s2">&quot;Lorem ipsum&quot;</span><span class="p">)</span>
+</code></pre></div>
+
 </div>
                 
               

@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#010" class="md-skip">
+        <a href="#020" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -615,6 +615,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#020" class="md-nav__link">
+    0.2.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#010" class="md-nav__link">
     0.1.0
   </a>
@@ -652,6 +659,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#020" class="md-nav__link">
+    0.2.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#010" class="md-nav__link">
     0.1.0
   </a>
@@ -680,7 +694,69 @@
                 
                   <h1>Релизы</h1>
                 
-                <h2 id="010">0.1.0<a class="headerlink" href="#010" title="Permanent link">&para;</a></h2>
+                <h2 id="020">0.2.0<a class="headerlink" href="#020" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Появилась полная поддержка callback-кнопок, включая payload-тип <code>CallbackAnswer</code> для быстрой отправки по методу <code>messages.sendMessageEventAnswer</code> вместо ручного API запроса</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">config</span>
+
+
+<span class="nd">@vq</span><span class="o">.</span><span class="n">Reaction</span><span class="p">(</span><span class="s2">&quot;message_event&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">callback_handler</span><span class="p">(</span>
+    <span class="n">cbanswer</span><span class="p">:</span> <span class="n">vq</span><span class="o">.</span><span class="n">CallbackAnswer</span><span class="p">()</span>
+<span class="p">):</span>
+    <span class="k">await</span> <span class="n">cbanswer</span><span class="o">.</span><span class="n">show_snackbar</span><span class="p">(</span><span class="s2">&quot;Lorem ipsum&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<ul>
+<li>В сигналах появилась поддержка возвращаемых значений. Теперь сигналом можно  вернуть что-то и использовать это значение у себя в реакции или другом сигнале</li>
+<li>classmethod <code>empty()</code> для класса <code>vq.Keyboard</code>, чтобы создать пустую клавиатуру</li>
+<li>name_case в payload-типах (<code>Sender</code>, <code>RepliedUser</code>...)</li>
+<li>
+<p>Новые payload типы</p>
+<ul>
+<li>GroupID</li>
+<li>ChatID</li>
+<li>PeerID</li>
+</ul>
+</li>
+<li>
+<p>Новые Cmd-типы</p>
+<ul>
+<li>Custom</li>
+<li>Optional</li>
+</ul>
+</li>
+<li>
+<p>Новые валидаторы</p>
+<ul>
+<li>ChatOnly</li>
+<li>DirectOnly</li>
+</ul>
+</li>
+<li>
+<p>Поле <code>api.URL</code> в <code>config.toml</code> для своего URL под вызов методов</p>
+</li>
+<li>Корутинная функция <code>vq.signal</code> для вызова сигнала вместо <code>vq.current.bot.signals.resolve</code></li>
+<li><code>vq.Message</code> теперь также поддерживает расположение в payload-типах. Можно отправлять сообщение неограниченное количество раз, используя все поля <code>messages.send</code>, сохраняя совместимость с прошлым способом отправки</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
+
+
+<span class="nd">@vq</span><span class="o">.</span><span class="n">Reaction</span><span class="p">(</span><span class="s2">&quot;message_new&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">answer</span><span class="p">:</span> <span class="n">vq</span><span class="o">.</span><span class="n">Message</span><span class="p">()):</span>
+    <span class="k">await</span> <span class="n">answer</span><span class="p">(</span><span class="s2">&quot;Lorem ipsum&quot;</span><span class="p">,</span> <span class="n">disable_mentions</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">answer</span><span class="p">(</span><span class="s2">&quot;Ipsum lorem&quot;</span><span class="p">,</span> <span class="n">keyboard</span><span class="o">=</span><span class="n">vq</span><span class="o">.</span><span class="n">Keyboard</span><span class="o">.</span><span class="n">empty</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">vq</span><span class="o">.</span><span class="n">Message</span><span class="p">(</span><span class="s2">&quot;Star it pls: https://github.com/Rhinik/vkquick&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Код выше отправит 3 сообщения</p>
+<ul>
+<li>Добавлены некоторые поля в описание проекта для PyPI (классификаторы, дополнительные ссылки...)</li>
+</ul>
+<h2 id="010">0.1.0<a class="headerlink" href="#010" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://vk.com/vkquick"><strong>Наша официальная группа ВК</strong></a></li>
 <li><a href="https://vk.me/join/AJQ1dzLqwBeU7O0H_oJZYNjD"><strong>Беседа, в которой ответят на любой Ваш вопрос по vkquick и API в целом</strong></a></li>

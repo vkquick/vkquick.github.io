@@ -385,6 +385,41 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#callbackanswer" class="md-nav__link">
+    CallbackAnswer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groupid" class="md-nav__link">
+    GroupID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatid" class="md-nav__link">
+    ChatID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peerid" class="md-nav__link">
+    PeerID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message" class="md-nav__link">
+    Message
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -758,6 +793,41 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#callbackanswer" class="md-nav__link">
+    CallbackAnswer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groupid" class="md-nav__link">
+    GroupID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatid" class="md-nav__link">
+    ChatID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peerid" class="md-nav__link">
+    PeerID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message" class="md-nav__link">
+    Message
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -844,6 +914,16 @@
 <p>Возвращает информацию о клиенте по доступным возможностям (может ли он работать с клаиватурой, с каруселями, какие кнопки поддерживает и прочее). Просто быстрый доступ к <code>event.object.client_info</code></p>
 <h3 id="api-bot"><code>API</code> и <code>Bot</code><a class="headerlink" href="#api-bot" title="Permanent link">&para;</a></h3>
 <p>Сессионные <strong>объекты</strong>, поэтому для того, чтобы получить их в аннотациях, скобки ставить не нужно. Их описание находится на отдельной странице</p>
+<h3 id="callbackanswer"><code>CallbackAnswer</code><a class="headerlink" href="#callbackanswer" title="Permanent link">&para;</a></h3>
+<p>Используйте для ответа на нажатие callback-кнопки. Примеры использования есть в разделе <a href="../quick-answers/">Быстрые ответы</a></p>
+<h3 id="groupid"><code>GroupID</code><a class="headerlink" href="#groupid" title="Permanent link">&para;</a></h3>
+<p>Возращает ID группы из поля <code>group_id</code> пришедшего события. Такое же значение находится под полем <code>api.group_id.</code> в <code>config.toml</code></p>
+<h3 id="chatid"><code>ChatID</code><a class="headerlink" href="#chatid" title="Permanent link">&para;</a></h3>
+<p>ID чата. Для бесед <code>peer_id - 2_000_000_000</code>, для диалогов с пользователем или сообществом — ID пользователя/сообщества</p>
+<h3 id="peerid"><code>PeerID</code><a class="headerlink" href="#peerid" title="Permanent link">&para;</a></h3>
+<p>ID диалога. Для бесед &gt; 2_000_000_000</p>
+<h3 id="message"><code>Message</code><a class="headerlink" href="#message" title="Permanent link">&para;</a></h3>
+<p>Используйте для отправки нескольких сообщений, либо выполнения какого-либо кода. Примеры использования есть в разделе <a href="../quick-answers/">Быстрые ответы</a></p>
 <h2 id="_1">Кастомный тип<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>Для того, чтобы создать свой аннотационный тип, унаследуйтесь от базового класса для всех аннотаций <code>vq.Annotype</code>. После чего нужно будет переопределить абстрактный async/sync метод <code>prepare</code>. Именно он вызывается у payload-типа для определения значения аргумента. Метод принимает в себя следующие параметры:</p>
 <table>

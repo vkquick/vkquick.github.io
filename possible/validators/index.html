@@ -389,6 +389,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#chatonly" class="md-nav__link">
+    ChatOnly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directonly" class="md-nav__link">
+    DirectOnly
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -742,6 +756,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#chatonly" class="md-nav__link">
+    ChatOnly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directonly" class="md-nav__link">
+    DirectOnly
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -959,6 +987,18 @@
 <td>-</td>
 <td>Своего рода Enum, аналог <code>typing.Literal</code>, т.е. набор определенных значений. Например, <code>Literal("foo", "bar")</code> означает <code>(?:foo|bar)</code></td>
 </tr>
+<tr>
+<td><code>Custom</code></td>
+<td>-</td>
+<td>-</td>
+<td>Делает тип по регулярному выржанию из первого аргумента и фабрике из второго</td>
+</tr>
+<tr>
+<td><code>Optional</code></td>
+<td>-</td>
+<td>-</td>
+<td>Делает тип опциональным. Принимает заменитель, который будет возвращен в случае, если пользователь не передал аргумент в тексте</td>
+</tr>
 </tbody>
 </table>
 <div class="admonition warning">
@@ -995,6 +1035,10 @@
 <p class="admonition-title">Todo</p>
 <p>Планируюется добавить быстрое получение пользователя из <code>member_id</code></p>
 </div>
+<h3 id="chatonly">ChatOnly<a class="headerlink" href="#chatonly" title="Permanent link">&para;</a></h3>
+<p>Сообщение пользователя должно быть отправленно только в беседе</p>
+<h3 id="directonly">DirectOnly<a class="headerlink" href="#directonly" title="Permanent link">&para;</a></h3>
+<p>Сообщение пользователя должно быть отправленно только в лс</p>
 <h2 id="_4">Кастомный валидатор<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>Для кастомного валидатора нужно унаследоваться от <code>vq.Validator</code> и определить async/sync метод <code>isvalid</code> (он вызывается для проверки для проверки валидности команды), принимающий следующие параметры</p>
 <ul>

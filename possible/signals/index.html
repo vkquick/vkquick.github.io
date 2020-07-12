@@ -664,8 +664,10 @@
 </code></pre></div>
 </div>
 
-<p>Для того, чтобы вызвать сигнал, надо вызвать корутинный метод</p>
+<p>Для того, чтобы вызвать сигнал, надо вызвать корутинный метод у <code>bot</code>. Считается устаревшим с <code>v0.2</code>. Будет удален в <code>v1</code></p>
 <p><code>async def resolve(self, name: str, /,  *args, **kwargs)</code></p>
+<p>Либо воспользоваться корутинной функцией, добавленной в <code>v0.2</code>:</p>
+<p><code>async def signal(self, name: str, /,  *args, **kwargs)</code></p>
 <p>Где <code>name</code> — имя сигнала (в нашем случае <code>example</code>), а *аргс и **kwargs — передаваемые параметры в обработчик. Поэтому сделаем команду <code>async</code> и добавим вызов сигнала:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">vkquick</span> <span class="k">as</span> <span class="nn">vq</span>
 
@@ -679,12 +681,18 @@
 <span class="sd">    Handler to command `call_example`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">await</span> <span class="n">bot</span><span class="o">.</span><span class="n">signals</span><span class="o">.</span><span class="n">resolve</span><span class="p">(</span><span class="s2">&quot;example&quot;</span><span class="p">)</span>
+    <span class="c1"># либо</span>
+    <span class="k">await</span> <span class="n">vq</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="s2">&quot;example&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 <p>Запускаем бота (<code>$ bot run --reload --debug</code>), переходим в лс и пишем <code>call_example</code>, после чего смотрим в консоль и видим, что появился вывод <code>Called signal `example`</code>, что говорит нам о том, что обработчк сигнала вызвался успешно</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Вы также можете вернуть своим сигналом какое-либо значение и далее использовать его</p>
+</div>
 <div class="admonition todo">
 <p class="admonition-title">Todo</p>
-<p>В v0.2 появится встроенный сигнал, вызываемый после получения нового события</p>
+<p>В v0.3 появится встроенный сигнал, вызываемый после получения нового события</p>
 </div>
 <div class="admonition todo">
 <p class="admonition-title">Todo</p>
