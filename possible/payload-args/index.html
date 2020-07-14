@@ -902,14 +902,10 @@
     <span class="k">return</span> <span class="n">sender</span><span class="o">.</span><span class="n">fn</span> <span class="c1"># fn это first_name</span>
 </code></pre></div></p>
 </div>
-<div class="admonition todo">
-<p class="admonition-title">Todo</p>
-<p><a href="https://vk.com/dev/users.get"><code>users.get</code></a> содержит еще одно поле — <code>name_case</code>. Его значения пока что передать нельзя, но такая возможность добавится в v0.2. Это рапространяет на все payload-типы, который возвращают объект пользователя</p>
-</div>
 <h3 id="replieduser"><code>RepliedUser</code><a class="headerlink" href="#replieduser" title="Permanent link">&para;</a></h3>
 <p>Возвращает пользователя <code>vq.User</code> из пересланного сообщения, если таковой имеется, иначе <code>None</code>. Принимает аналогичные для <code>Sender</code> поля</p>
 <h3 id="fwdusers"><code>FwdUsers</code><a class="headerlink" href="#fwdusers" title="Permanent link">&para;</a></h3>
-<p>Возвращает <strong>список</strong> из пользователей <code>vq.User</code>, попавших в пересланные сообщения (на самом верхнем уровне глубины). Переданные поля для <code>fields</code> и <code>name_case</code> добудуться для каждого из пользователей</p>
+<p>Возвращает <strong>список</strong> из пользователей <code>vq.User</code>, попавших в пересланные сообщения (на самом верхнем уровне глубины). Переданные поля для <code>fields</code> и <code>name_case</code> добудутся для каждого из пользователей</p>
 <h3 id="clientinfo"><code>ClientInfo</code><a class="headerlink" href="#clientinfo" title="Permanent link">&para;</a></h3>
 <p>Возвращает информацию о клиенте по доступным возможностям (может ли он работать с клаиватурой, с каруселями, какие кнопки поддерживает и прочее). Просто быстрый доступ к <code>event.object.client_info</code></p>
 <h3 id="api-bot"><code>API</code> и <code>Bot</code><a class="headerlink" href="#api-bot" title="Permanent link">&para;</a></h3>
